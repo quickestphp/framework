@@ -1,0 +1,46 @@
+{
+  "name": "quickestphp/framework",
+  "description": "The Quickest Framework for Web Development.",
+  "keywords": [
+    "quickestphp",
+    "framework",
+    "orm",
+    "mvc",
+    "dry",
+    "rapid-development",
+    "validation"
+  ],
+  "license": "MIT",
+  "homepage": "https://quickestphp.com",
+  "support": {
+    "issues": "https://github.com/quickestphp/framework/issues",
+    "source": "https://github.com/quickestphp/framework"
+  },
+  "authors": [
+    {
+      "name": "Jonatan Flores",
+      "email": "jonatan@quickestphp.com"
+    }
+  ],
+  "require": {
+    "php": "^7.0.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^7.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "Quickest\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Quickest\\Tests\\": "tests/"
+    }
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
