@@ -4,7 +4,7 @@ This router package is easy, fast and extremely uncomplicated. It is not made fo
 
 ## How to install it
 
-First create the folder where your application will live and then inside of it use the command for requiring the package or define in composer.json file, **IT IS NECESSARY** to have **COMPOSR** in order to **INSTALL** this package, see bellow:
+First create the folder where your application will live and then inside of it use the command for requiring the package or define in composer.json file, **IT IS NECESSARY** to have **COMPOSER** in order to **INSTALL** this package, see bellow:
 
 ```bash
 $ composer require quickestphp/router
