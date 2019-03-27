@@ -2,9 +2,10 @@
 
 namespace Quickest\Tests;
 
+use PHPUnit\Framework\TestCase;
 use Quickest\Router\Route;
 
-class RouteTest extends \PHPUnit\Framework\TestCase
+class RouteTest extends TestCase
 {
     public function testConstructorCanReceiveNecessaryArguments()
     {
