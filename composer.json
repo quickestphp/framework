@@ -11,7 +11,7 @@
     "validation"
   ],
   "license": "MIT",
-  "homepage": "https://quickestphp.com",
+  "homepage": "https://quickestphp.org",
   "support": {
     "issues": "https://github.com/quickestphp/framework/issues",
     "source": "https://github.com/quickestphp/framework"
@@ -19,7 +19,7 @@
   "authors": [
     {
       "name": "Jonatan Flores",
-      "email": "jonatan@quickestphp.com"
+      "email": "jonatan@quickestphp.org"
     }
   ],
   "require": {
