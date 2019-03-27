@@ -1,6 +1,6 @@
 <?php
 
-namespace Unit\Tests;
+namespace Quickest\Tests;
 
 use Quickest\Router\Route;
 
