@@ -16,7 +16,13 @@ class Router
     private $request;
 
     /** @var array */
-    private $routes = [];
+    private $routes = [
+        'GET' => [],
+        'POST' => [],
+        'PUT' => [],
+        'PATCH' => [],
+        'DELETE' => [],
+    ];
 
     /** @var array */
     private $candidateRoutes = [];
@@ -39,9 +45,12 @@ class Router
         return $this->request;
     }
 
-    public function add(string $pattern, $callable, array $conditions = [])
+    public function add(string $method, string $pattern, $callable, array $conditions = [])
     {
-        $this->routes[] = new Route($pattern, $callable, $conditions);
+        $method = strtoupper($method);
+        $route = new Route($pattern, $callable, $conditions);
+
+        $this->routes[$method][] = $route;
     }
 
     public function getRoutes():array
@@ -52,8 +61,9 @@ class Router
     public function dispatch():bool
     {
         $requestUri = $this->request->getUri();
+        $method = $this->request->getMethod();
 
-        foreach ($this->routes as $route) {
+        foreach ($this->routes[$method] as $route) {
             if ($route->matches($requestUri)) {
                 $this->candidateRoutes[] = $route;
             }

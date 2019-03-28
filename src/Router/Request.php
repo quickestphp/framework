@@ -21,4 +21,11 @@ class Request
 
         return $path;
     }
+
+    public function getMethod():string
+    {
+        $method = $_SERVER['REQUEST_METHOD'] ?? "GET";
+
+        return strtoupper($method);
+    }
 }

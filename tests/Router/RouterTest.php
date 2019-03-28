@@ -19,10 +19,10 @@ class RouterTest extends \PHPUnit\Framework\TestCase
     public function setUp()
     {
         $this->router = new Router(new Request);
-        $this->router->add('/categories', 'App\\Controllers\\CategoriesController@all');
-        $this->router->add('/posts', 'App\\Controllers\\PostsController@all');
-        $this->router->add('/posts/:id', 'App\\Controllers\\PostsController@single', ['id' => '[\d]{1,8}']);
-        $this->router->add('/products', 'App\\Controllers\\ProductsController@all');
+        $this->router->add('GET', '/categories', 'App\\Controllers\\CategoriesController@all');
+        $this->router->add('GET', '/posts', 'App\\Controllers\\PostsController@all');
+        $this->router->add('GET', '/posts/:id', 'App\\Controllers\\PostsController@single', ['id' => '[\d]{1,8}']);
+        $this->router->add('GET', '/products', 'App\\Controllers\\ProductsController@all');
 
         $this->initialServer = $_SERVER;
 
@@ -47,11 +47,13 @@ class RouterTest extends \PHPUnit\Framework\TestCase
 
     public function testCanAddRouteToRoutesCollection()
     {
-        $this->assertCount(4, $this->router->getRoutes());
-        $this->assertInstanceOf(Route::class, $this->router->getRoutes()[0]);
-        $this->assertInstanceOf(Route::class, $this->router->getRoutes()[1]);
-        $this->assertInstanceOf(Route::class, $this->router->getRoutes()[2]);
-        $this->assertInstanceOf(Route::class, $this->router->getRoutes()[3]);
+        $routes = $this->router->getRoutes()['GET'];
+
+        $this->assertCount(4, $routes);
+        $this->assertInstanceOf(Route::class, $routes[0]);
+        $this->assertInstanceOf(Route::class, $routes[1]);
+        $this->assertInstanceOf(Route::class, $routes[2]);
+        $this->assertInstanceOf(Route::class, $routes[3]);
     }
 
     public function testRouterObjectHasVariableRequestInstanceOfRequestObject()
